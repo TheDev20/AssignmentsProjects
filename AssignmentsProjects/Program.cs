@@ -9,48 +9,6 @@ namespace AssignmentsProjects
 {
     internal class Program
     {
-        public class Circle : Shape, IDrawable
-        {
-            private double _radius;
-
-            public Circle(double radius)
-            {
-                _radius = radius;
-            }
-
-            internal override double Area()
-            {
-                return Math.PI * _radius * _radius;
-            }
-
-            public void Draw()
-            {
-                Console.WriteLine($"Drawing a circle with radius {_radius}");
-            }
-        }
-
-        public class Rectangle : Shape, IDrawable
-        {
-            private double _width;
-            private double _height;
-
-            public Rectangle(double width, double height)
-            {
-                _width = width;
-                _height = height;
-            }
-
-            internal override double Area()
-            {
-                return _width * _height;
-            }
-
-            public void Draw()
-            {
-                Console.WriteLine($"Drawing a rectangle with width {_width} and height {_height}");
-            }
-        }
-
         static void Main(string[] args)
         {
             // Create an array of BankAccount objects

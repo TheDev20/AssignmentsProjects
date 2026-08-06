@@ -11,7 +11,7 @@ namespace AssignmentsProjects.Classes
         void Draw();
     }
 
-    internal abstract class Shape
+    public abstract class Shape
     {
         internal abstract double Area();
 
