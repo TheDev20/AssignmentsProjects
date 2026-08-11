@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="AssignmentsProjects/AssignmentsProjects.csproj" />
+  <Project Path="AssignmentsProjects/AssignmentsProjects.csproj" Id="a6097e5c-cd33-4ec5-9c46-b298a7f8cd37" />
+  <Project Path="WebApp1/WebApp1.csproj" Id="9ecaa60f-5327-4400-a3b1-f473b18e73da" />
 </Solution>
