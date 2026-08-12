@@ -41,6 +41,10 @@ namespace WebApp1.Repository
 
         public void CreateProduct(Product product)
         {
+            if (_products.Any(p => p.Name == product.Name))
+            {
+                throw new Exception("Product with the same name already exists.");
+            }
             _products.Add(product);
         }
 

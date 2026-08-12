@@ -62,7 +62,7 @@ namespace WebApp1.Controllers
                 return NotFound();
             }
             _productServices.DeleteProduct(id);
-            return Ok();
+            return NotFound();
         }
     }
 }

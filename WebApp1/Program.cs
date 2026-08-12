@@ -1,3 +1,4 @@
+using WebApp1.Middleware;
 using WebApp1.Repository;
 using WebApp1.Repository.Interfaces;
 using WebApp1.Services;
@@ -17,6 +18,7 @@ builder.Services.AddSingleton<IProductRepo, ProductRepo>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseMiddleware<GlobalException>();
 
 app.UseHttpsRedirection();
 
