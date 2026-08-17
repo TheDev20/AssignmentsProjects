@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using WebApp1.Middleware;
 using WebApp1.Repository;
 using WebApp1.Repository.Interfaces;
@@ -10,8 +11,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder
+    .Services.AddApiVersioning(options =>
+    {
+        options.DefaultApiVersion = new ApiVersion(1, 0);
+        options.AssumeDefaultVersionWhenUnspecified = true;
+        options.ReportApiVersions = true;
+    })
+    .AddApiExplorer(options =>
+    {
+        options.GroupNameFormat = "'v'VVV";
+        options.SubstituteApiVersionInUrl = true;
+    });
 
+builder.Services.AddSingleton<ITaskService, TaskService>();
+builder.Services.AddSingleton<ITaskRepo, TaskRepo>();
 builder.Services.AddSingleton<IProductServices, ProductService>();
 builder.Services.AddSingleton<IProductRepo, ProductRepo>();
 

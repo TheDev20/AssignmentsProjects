@@ -1,11 +1,13 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using WebApp1.Models;
 using WebApp1.Services.Interfaces;
 
-namespace WebApp1.Controllers
+namespace WebApp1.Controllers.V1
 {
     [ApiController]
-    [Route("/api/product")]
+    [ApiVersion("1.0")]
+    [Route("/api/v{version:apiVersion}/product")]
     public class ProductsController : ControllerBase
     {
         private IProductServices _productServices;
